@@ -27,6 +27,15 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'#, git: 'https://github.com/plataformatec/devise'
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
+gem "paperclip", "~> 5.2.1"
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

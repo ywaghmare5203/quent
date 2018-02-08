@@ -1,5 +1,5 @@
 class ApiController < ActionController::API
-  include Response
+  #include Response
   include ExceptionHandler
 
   # called before every action on controllers

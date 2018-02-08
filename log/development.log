@@ -13,3 +13,2336 @@ Migrating to CreateUsers (20180208130153)
   [1m[35m (36.8ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/signup" for 127.0.0.1 at 2018-02-08 20:47:09 +0530
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "api-quneat_development" does not exist
+):
+  
+activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:699:in `rescue in connect'
+activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:694:in `connect'
+activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.4) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (69.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (65.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180208130153)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (71.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208130153"]]
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-02-08 15:17:37.695749"], ["updated_at", "2018-02-08 15:17:37.695749"]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/signup" for 127.0.0.1 at 2018-02-08 20:47:48 +0530
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 20:50:38 +0530
+  
+ActionController::RoutingError (uninitialized constant ApiController::Response):
+  
+app/controllers/api_controller.rb:2:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 20:51:17 +0530
+  
+ActionController::RoutingError (uninitialized constant ApiController::Response):
+  
+app/controllers/api_controller.rb:2:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 20:54:52 +0530
+  
+ActionController::RoutingError (uninitialized constant ApiController::Response):
+  
+app/controllers/api_controller.rb:2:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 20:56:05 +0530
+  
+ActionController::RoutingError (undefined method `protect_from_forgery' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 20:56:45 +0530
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::Response):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 20:57:24 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (19.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ash@email.com"], ["password_digest", "$2a$10$b4zZ.noNR78YuU7vdeYmCuIexJf/VhzsMiTb51jSDXiTkizwN1DU."], ["created_at", "2018-02-08 15:27:24.262038"], ["updated_at", "2018-02-08 15:27:24.262038"]]
+  [1m[35m (10.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 766ms (ActiveRecord: 93.4ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<UsersController:0xb48c6f40>):
+  
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:00:35 +0530
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::Response):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:04:31 +0530
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::Response):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:23:10 +0530
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::Response):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:24:03 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (28.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ash@email.com"], ["password_digest", "$2a$10$YALMM2WUkurBCMdmH.Z/QeWYHeb2PXEPWyQFliai3x8sHUJOoIEn2"], ["created_at", "2018-02-08 15:54:04.219954"], ["updated_at", "2018-02-08 15:54:04.219954"]]
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 683ms (ActiveRecord: 106.3ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:27:58 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ash@email.com"], ["password_digest", "$2a$10$u7sdaejxfNHBbc6BW2d/cOD0oOSTqKZyq9Eyt5F70kEUX8V5Q/oVC"], ["created_at", "2018-02-08 15:57:58.914436"], ["updated_at", "2018-02-08 15:57:58.914436"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 472ms (ActiveRecord: 20.5ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:28:18 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ash@email.com"], ["password_digest", "$2a$10$L.gOvjzAVGzVl5Qn5BGKZ.UIdZLN29CojsHqYKlAUQOitTzr7LefK"], ["created_at", "2018-02-08 15:58:18.517849"], ["updated_at", "2018-02-08 15:58:18.517849"]]
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 492ms (Views: 18.2ms | ActiveRecord: 19.2ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:28:29 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ash@email.com"], ["password_digest", "$2a$10$V1A29QFbsuGoSTpC4.7ZCe66kXDH6MLp5AxViMFpUr2QUoYtts4re"], ["created_at", "2018-02-08 15:58:29.391060"], ["updated_at", "2018-02-08 15:58:29.391060"]]
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 448ms (Views: 0.2ms | ActiveRecord: 12.3ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:29:21 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ash@email.com"], ["password_digest", "$2a$10$75fFFsVhDO53Q/NejLdPGOBRSPPgIavj8oUHr2dFHYVxQknGSJsdO"], ["created_at", "2018-02-08 15:59:21.890187"], ["updated_at", "2018-02-08 15:59:21.890187"]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 473ms (Views: 0.3ms | ActiveRecord: 18.7ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:32:14 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ash@email.com"], ["password_digest", "$2a$10$QVjB2iY.hgzjOY86un30SukVwwgH13ICHpTUPkgGb.hBHl6VSxPkq"], ["created_at", "2018-02-08 16:02:15.596902"], ["updated_at", "2018-02-08 16:02:15.596902"]]
+  [1m[35m (10.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 625ms (Views: 0.5ms | ActiveRecord: 64.7ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:39:20 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 449ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<AuthenticationController:0x0aa0fde8>):
+  
+app/controllers/authentication_controller.rb:6:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:40:33 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+No template found for AuthenticationController#authenticate, rendering head :no_content
+Completed 204 No Content in 385ms (ActiveRecord: 6.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:41:43 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::MissingToken):
+  
+app/auth/authorize_api_request.rb:40:in `http_auth_header'
+app/auth/authorize_api_request.rb:32:in `decoded_auth_token'
+app/auth/authorize_api_request.rb:20:in `user'
+app/auth/authorize_api_request.rb:9:in `call'
+app/controllers/application_controller.rb:13:in `authorize_request'
+Started POST "/authenticate" for 127.0.0.1 at 2018-02-08 21:42:27 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/authenticate"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:42:54 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"example@mail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"example@mail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::MissingToken):
+  
+app/auth/authorize_api_request.rb:40:in `http_auth_header'
+app/auth/authorize_api_request.rb:32:in `decoded_auth_token'
+app/auth/authorize_api_request.rb:20:in `user'
+app/auth/authorize_api_request.rb:9:in `call'
+app/controllers/application_controller.rb:13:in `authorize_request'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:44:08 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"example@mail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"example@mail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :authentication
+Unpermitted parameter: :authentication
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@mail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.2ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError):
+  
+app/auth/authenticate_user.rb:21:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:44:21 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"ash", "email"=>"ash@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+No template found for AuthenticationController#authenticate, rendering head :no_content
+Completed 204 No Content in 326ms (ActiveRecord: 5.2ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:44:31 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"assh", "email"=>"ash@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+No template found for AuthenticationController#authenticate, rendering head :no_content
+Completed 204 No Content in 311ms (ActiveRecord: 0.5ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:44:51 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"assh", "email"=>"ash@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ash@email.com"], ["LIMIT", 1]]
+No template found for AuthenticationController#authenticate, rendering head :no_content
+Completed 204 No Content in 309ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:45:23 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"assh", "email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError):
+  
+app/auth/authenticate_user.rb:21:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:47:19 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"assh", "email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.4ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError):
+  
+app/auth/authenticate_user.rb:21:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:48:28 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"assh", "email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.6ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError):
+  
+app/auth/authenticate_user.rb:21:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:48:54 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"assh", "email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.3ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError):
+  
+app/auth/authenticate_user.rb:21:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:50:34 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"assh", "email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.2ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError):
+  
+app/auth/authenticate_user.rb:21:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:52:12 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"name"=>"assh", "email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+Unpermitted parameter: :name
+Unpermitted parameter: :name
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.9ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError):
+  
+app/auth/authenticate_user.rb:21:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:52:38 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError):
+  
+app/auth/authenticate_user.rb:21:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 21:55:16 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.4ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError):
+  
+app/auth/authenticate_user.rb:21:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:58:36 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ashemail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ashemail.com"], ["password_digest", "$2a$10$WNJ5Ac/v9AnCr5ZcGe5yp.fv4awcHAJte3Srdp9zUdYg4FXIZRoVy"], ["created_at", "2018-02-08 16:28:36.888468"], ["updated_at", "2018-02-08 16:28:36.888468"]]
+  [1m[35m (34.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 497ms (Views: 0.3ms | ActiveRecord: 39.8ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 21:58:56 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ashemailcom", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ashemailcom"], ["password_digest", "$2a$10$GP7WQS0AJC2i.WC6Ir.CFefbnXhxJTpFh0FHW9LnDY6ZQJYYn.I8C"], ["created_at", "2018-02-08 16:28:56.629570"], ["updated_at", "2018-02-08 16:28:56.629570"]]
+  [1m[35m (35.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 484ms (Views: 0.3ms | ActiveRecord: 38.0ms)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 22:02:15 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.6ms)
+
+
+  
+NameError (uninitialized constant ExceptionHandler::AuthenticationError):
+  
+app/auth/authenticate_user.rb:22:in `user'
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 22:05:56 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:5:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 22:06:22 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.7ms)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:8:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 22:07:13 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.5ms)
+
+
+  
+NoMethodError (undefined method `id' for "Invalid credentials":String):
+  
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 22:08:00 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.4ms)
+
+
+  
+NoMethodError (undefined method `id' for "Invalid credentials":String):
+  
+app/auth/authenticate_user.rb:9:in `call'
+app/controllers/authentication_controller.rb:4:in `authenticate'
+Started POST "/auth/login" for 127.0.0.1 at 2018-02-08 22:08:19 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"adsh@email.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adsh@email.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 12ms (Views: 0.3ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:16:01 +0530
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ashemailcom", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ashemailcom"], ["password_digest", "$2a$10$4Pg3i7J8aiuPJZur0ELreerIdYGJFpA9x1GUYlwRl954AEAoC7kOW"], ["created_at", "2018-02-08 16:46:02.856443"], ["updated_at", "2018-02-08 16:46:02.856443"]]
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+UserMailer#welcome_email: processed outbound mail in 2.2ms
+Completed 500 Internal Server Error in 862ms (ActiveRecord: 27.5ms)
+
+
+  
+NoMethodError (undefined method `email' for nil:NilClass):
+  
+app/mailers/user_mailer.rb:7:in `welcome_email'
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:16:55 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ashemailcom", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ashemailcom"], ["password_digest", "$2a$10$ExYBWQ5NrZ5iCGzHovdPEurH1/vGCo3LcMVi1GJ2uEKkrhtQCKKsa"], ["created_at", "2018-02-08 16:47:05.518240"], ["updated_at", "2018-02-08 16:47:05.518240"]]
+  [1m[35m (268.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+UserMailer#welcome_email: processed outbound mail in 10.2ms
+Completed 500 Internal Server Error in 747ms (ActiveRecord: 270.8ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:8:in `welcome_email'
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:19:14 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ashemailcom", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ashemailcom"], ["password_digest", "$2a$10$C6x7Xks0Hhke09YsWZb65.SmZZP1Et9/JlWzQTUVIxu2t2s8OO1EK"], ["created_at", "2018-02-08 16:49:14.520171"], ["updated_at", "2018-02-08 16:49:14.520171"]]
+  [1m[35m (27.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+UserMailer#welcome_email: processed outbound mail in 5.5ms
+Completed 500 Internal Server Error in 481ms (ActiveRecord: 31.0ms)
+
+
+  
+ActionView::MissingTemplate (Missing template user_mailer/welcome_email with "mailer". Searched in:
+  * "user_mailer"
+):
+  
+app/mailers/user_mailer.rb:8:in `welcome_email'
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:21:38 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ashemailcom", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ashemailcom"], ["password_digest", "$2a$10$XAcFdNZ4mAjKugChJLfLpelOOXb0byS.NdmRX/rxD1.AR4ikmOMHa"], ["created_at", "2018-02-08 16:51:38.999088"], ["updated_at", "2018-02-08 16:51:38.999088"]]
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (21.6ms)
+UserMailer#welcome_email: processed outbound mail in 71.5ms
+Completed 500 Internal Server Error in 514ms (ActiveRecord: 13.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `login' for #<User:0x0a484e50>):
+     7:     <h1>Welcome to example.com, <%= @user.name %></h1>
+     8:     <p>
+     9:       You have successfully signed up to example.com,
+    10:       your username is: <%= @user.login %>.<br/>
+    11:     </p>
+    12:     <p>
+    13:       To login to the site, just follow this link: <%= @url %>.
+  
+app/views/user_mailer/welcome_email.html.erb:10:in `_app_views_user_mailer_welcome_email_html_erb___392379901_87078870'
+app/mailers/user_mailer.rb:8:in `welcome_email'
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:22:34 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ashemailcom", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ashemailcom"], ["password_digest", "$2a$10$a1KDPec1QnIZLjQy.m44AuKUGAeJC8Dyh9HQ/xCvcvVd/CB5AFV8S"], ["created_at", "2018-02-08 16:52:35.050699"], ["updated_at", "2018-02-08 16:52:35.050699"]]
+  [1m[35m (265.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.7ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (13.4ms)
+UserMailer#welcome_email: processed outbound mail in 45.1ms
+Completed 500 Internal Server Error in 749ms (ActiveRecord: 267.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `login' for #<User:0xb399d6e0>):
+    2: ===============================================
+    3:  
+    4: You have successfully signed up to example.com,
+    5: your username is: <%= @user.login %>.
+    6:  
+    7: To login to the site, just follow this link: <%= @url %>.
+    8:  
+  
+app/views/user_mailer/welcome_email.text.erb:5:in `_app_views_user_mailer_welcome_email_text_erb__915267956_83723570'
+app/mailers/user_mailer.rb:8:in `welcome_email'
+app/controllers/users_controller.rb:8:in `create'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:22:59 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ashemailcom", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ashemailcom"], ["password_digest", "$2a$10$SIlXSRaPxNZOr.OjTtYDpOV5YnFHibyUh7tUifZDTQHdOmvoMDURW"], ["created_at", "2018-02-08 16:52:59.465017"], ["updated_at", "2018-02-08 16:52:59.465017"]]
+  [1m[35m (28.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ashemailcom"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 350.7ms
+Sent mail to ashemailcom (12.5ms)
+Date: Thu, 08 Feb 2018 22:23:00 +0530
+From: ywaghmare5203@gmail.com
+To: ashemailcom
+Message-ID: <5a7c806c22589_1c4053af41241750@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c806c1fd25_1c4053af41241615";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c806c1fd25_1c4053af41241615
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c806c1fd25_1c4053af41241615
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c806c1fd25_1c4053af41241615--
+
+Completed 201 Created in 830ms (Views: 0.3ms | ActiveRecord: 30.1ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:23:45 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ywaghmare5203@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ywaghmare5203@gmail.com"], ["password_digest", "$2a$10$/xTkPIOgBFybSaAbNW.gmO3mTwJ4D/XZ4t42PvEdBEk87aXIryX0m"], ["created_at", "2018-02-08 16:53:45.300586"], ["updated_at", "2018-02-08 16:53:45.300586"]]
+  [1m[35m (29.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.9ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 16.3ms
+Sent mail to ywaghmare5203@gmail.com (4.5ms)
+Date: Thu, 08 Feb 2018 22:23:45 +0530
+From: ywaghmare5203@gmail.com
+To: ywaghmare5203@gmail.com
+Message-ID: <5a7c80999bc50_1c4053af3cc419e4@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c80999a86d_1c4053af3cc4186b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c80999a86d_1c4053af3cc4186b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c80999a86d_1c4053af3cc4186b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c80999a86d_1c4053af3cc4186b--
+
+Completed 201 Created in 482ms (Views: 0.2ms | ActiveRecord: 31.5ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:26:58 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ywaghmare5203@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ywaghmare5203@gmail.com"], ["password_digest", "$2a$10$Iq731BwI.fR7pLH.qmT.6OV5KwG43kEJCNxdXvUiAPKsElzZgvoi2"], ["created_at", "2018-02-08 16:56:58.918077"], ["updated_at", "2018-02-08 16:56:58.918077"]]
+  [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.0ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 18.0ms
+Sent mail to ywaghmare5203@gmail.com (4.6ms)
+Date: Thu, 08 Feb 2018 22:26:59 +0530
+From: ywaghmare5203@gmail.com
+To: ywaghmare5203@gmail.com
+Message-ID: <5a7c815b3ec20_1c4053af386421d2@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c815b3d5a7_1c4053af3864202";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c815b3d5a7_1c4053af3864202
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c815b3d5a7_1c4053af3864202
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c815b3d5a7_1c4053af3864202--
+
+Completed 201 Created in 484ms (Views: 0.4ms | ActiveRecord: 31.4ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:27:00 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ywaghmare5203@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ywaghmare5203@gmail.com"], ["password_digest", "$2a$10$4D39dNkaQLIZ4MiLpWpR8.Jr0cJc.eM4XvKeERt1mO1JtJIUZZHtK"], ["created_at", "2018-02-08 16:57:00.688295"], ["updated_at", "2018-02-08 16:57:00.688295"]]
+  [1m[35m (34.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.8ms)
+UserMailer#welcome_email: processed outbound mail in 16.8ms
+Sent mail to ywaghmare5203@gmail.com (3.9ms)
+Date: Thu, 08 Feb 2018 22:27:01 +0530
+From: ywaghmare5203@gmail.com
+To: ywaghmare5203@gmail.com
+Message-ID: <5a7c815d733d_1c4053af45842361@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c815d5fda_1c4053af458422d0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c815d5fda_1c4053af458422d0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c815d5fda_1c4053af458422d0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c815d5fda_1c4053af458422d0--
+
+Completed 201 Created in 486ms (Views: 0.3ms | ActiveRecord: 36.3ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:27:01 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ywaghmare5203@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ywaghmare5203@gmail.com"], ["password_digest", "$2a$10$t1K0folqmySyMywpDUgwlebyzlJTotzsIWZ3QOjX1/N8sQcfudQx."], ["created_at", "2018-02-08 16:57:01.929905"], ["updated_at", "2018-02-08 16:57:01.929905"]]
+  [1m[35m (33.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.7ms)
+UserMailer#welcome_email: processed outbound mail in 17.0ms
+Sent mail to ywaghmare5203@gmail.com (6.0ms)
+Date: Thu, 08 Feb 2018 22:27:02 +0530
+From: ywaghmare5203@gmail.com
+To: ywaghmare5203@gmail.com
+Message-ID: <5a7c815e43424_1c4053af41242516@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c815e41ce1_1c4053af41242474";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c815e41ce1_1c4053af41242474
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c815e41ce1_1c4053af41242474
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c815e41ce1_1c4053af41242474--
+
+Completed 201 Created in 494ms (Views: 0.2ms | ActiveRecord: 35.9ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:27:02 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ywaghmare5203@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ywaghmare5203@gmail.com"], ["password_digest", "$2a$10$Vi3zqFFbGzdIg4da5HDp5.lbqRDKXLLpDwDfqz9lwgHO7BM674uFy"], ["created_at", "2018-02-08 16:57:03.082511"], ["updated_at", "2018-02-08 16:57:03.082511"]]
+  [1m[35m (31.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 18.2ms
+Sent mail to ywaghmare5203@gmail.com (5.5ms)
+Date: Thu, 08 Feb 2018 22:27:03 +0530
+From: ywaghmare5203@gmail.com
+To: ywaghmare5203@gmail.com
+Message-ID: <5a7c815f68e52_1c4053af3cc42754@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c815f673c3_1c4053af3cc426c9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c815f673c3_1c4053af3cc426c9
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c815f673c3_1c4053af3cc426c9
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c815f673c3_1c4053af3cc426c9--
+
+Completed 201 Created in 495ms (Views: 0.3ms | ActiveRecord: 35.1ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:27:04 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ywaghmare5203@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ywaghmare5203@gmail.com"], ["password_digest", "$2a$10$CLmnCyHvG9wbIIHNYZvJder0z9SMvWZ3QJpmH.7RaCIDbms0qXCMC"], ["created_at", "2018-02-08 16:57:04.182443"], ["updated_at", "2018-02-08 16:57:04.182443"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (1.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.7ms)
+UserMailer#welcome_email: processed outbound mail in 18.9ms
+Sent mail to ywaghmare5203@gmail.com (5.5ms)
+Date: Thu, 08 Feb 2018 22:27:04 +0530
+From: ywaghmare5203@gmail.com
+To: ywaghmare5203@gmail.com
+Message-ID: <5a7c81607be45_1c4053af3864298f@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c81607a6c6_1c4053af386428d1";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c81607a6c6_1c4053af386428d1
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c81607a6c6_1c4053af386428d1
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c81607a6c6_1c4053af386428d1--
+
+Completed 201 Created in 481ms (Views: 0.3ms | ActiveRecord: 17.7ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:32:02 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ywaghmare5203@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ywaghmare5203@gmail.com"], ["password_digest", "$2a$10$rsvnvPeDVsjE7wFOp42PXeRKgMONmxPpIp8Dsf64JhJPMFmLq8tVK"], ["created_at", "2018-02-08 17:02:02.339393"], ["updated_at", "2018-02-08 17:02:02.339393"]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.7ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.7ms)
+UserMailer#welcome_email: processed outbound mail in 18.0ms
+Sent mail to ywaghmare5203@gmail.com (5.3ms)
+Date: Thu, 08 Feb 2018 22:32:02 +0530
+From: ywaghmare5203@gmail.com
+To: ywaghmare5203@gmail.com
+Message-ID: <5a7c828aa141f_1c4053af45843122@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c828aa00e2_1c4053af458430cc";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c828aa00e2_1c4053af458430cc
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c828aa00e2_1c4053af458430cc
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c828aa00e2_1c4053af458430cc--
+
+Completed 201 Created in 475ms (Views: 0.3ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:34:29 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"ywaghmare5203@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "ywaghmare5203@gmail.com"], ["password_digest", "$2a$10$2cWKd7h6cGdE1QgkCDonnuevt26.9fmdy97Y7GWK09dyMjP.Kf0.e"], ["created_at", "2018-02-08 17:04:29.571807"], ["updated_at", "2018-02-08 17:04:29.571807"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ywaghmare5203@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.5ms)
+UserMailer#welcome_email: processed outbound mail in 17.2ms
+Sent mail to ywaghmare5203@gmail.com (5.6ms)
+Date: Thu, 08 Feb 2018 22:34:29 +0530
+From: ywaghmare5203@gmail.com
+To: ywaghmare5203@gmail.com
+Message-ID: <5a7c831ddff27_1c4053af3cc433de@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c831dde841_1c4053af3cc43243";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c831dde841_1c4053af3cc43243
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c831dde841_1c4053af3cc43243
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c831dde841_1c4053af3cc43243--
+
+Completed 201 Created in 522ms (Views: 0.3ms | ActiveRecord: 25.1ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:35:50 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"yogesh.waghmare@consagous.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "yogesh.waghmare@consagous.com"], ["password_digest", "$2a$10$d6fwG.0ERiOa1koJEuiDE.qZ2FAzM8xNantD.erGYAUYo.FYeWCiS"], ["created_at", "2018-02-08 17:05:50.484420"], ["updated_at", "2018-02-08 17:05:50.484420"]]
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yogesh.waghmare@consagous.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yogesh.waghmare@consagous.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.9ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.6ms)
+UserMailer#welcome_email: processed outbound mail in 17.8ms
+Sent mail to yogesh.waghmare@consagous.com (23.4ms)
+Date: Thu, 08 Feb 2018 22:35:50 +0530
+From: ywaghmare5203@gmail.com
+To: yogesh.waghmare@consagous.com
+Message-ID: <5a7c836ecd08d_1c4053af38643562@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c836ec6f24_1c4053af38643429";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c836ec6f24_1c4053af38643429
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c836ec6f24_1c4053af38643429
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c836ec6f24_1c4053af38643429--
+
+Completed 201 Created in 506ms (Views: 0.4ms | ActiveRecord: 28.7ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:47:43 +0530
+  
+ArgumentError (Before process_action callback :authorize_request has not been defined):
+  
+app/controllers/users_controller.rb:2:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 22:49:05 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"yogesh.waghmare@consagous.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "ash"], ["email", "yogesh.waghmare@consagous.com"], ["password_digest", "$2a$10$bsbutdJf0gh2WWxvi5c8SOrNoANzMu.DLFLfv8p6Af3NdapyG3HYK"], ["created_at", "2018-02-08 17:19:05.298059"], ["updated_at", "2018-02-08 17:19:05.298059"]]
+  [1m[35m (15.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yogesh.waghmare@consagous.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yogesh.waghmare@consagous.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (0.6ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (1.0ms)
+UserMailer#welcome_email: processed outbound mail in 52.8ms
+Sent mail to yogesh.waghmare@consagous.com (8.0ms)
+Date: Thu, 08 Feb 2018 22:49:05 +0530
+From: ywaghmare5203@gmail.com
+To: yogesh.waghmare@consagous.com
+Message-ID: <5a7c8689a9396_1c4053af412437a4@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c8689a6147_1c4053af41243616";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c8689a6147_1c4053af41243616
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c8689a6147_1c4053af41243616
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c8689a6147_1c4053af41243616--
+
+Completed 201 Created in 599ms (Views: 0.3ms | ActiveRecord: 23.9ms)
+
+
+  [1m[35m (15.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateAdminUsers (20180208175714)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (106.4ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (27.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (45.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208175714"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20180208175720)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (75.1ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (29.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (30.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208175720"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$11$vW3QJAmThKiFJZit5VGATO9ev3f9DP5.kCNVp6OwWE579am8M2D3y"], ["created_at", "2018-02-08 17:57:50.560070"], ["updated_at", "2018-02-08 17:57:50.560070"]]
+  [1m[35m (15.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin" for 127.0.0.1 at 2018-02-08 23:28:19 +0530
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 38ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-02-08 23:28:20 +0530
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/shared/_links.erb (4.5ms)
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (132.0ms)
+Completed 200 OK in 11463ms (Views: 11403.5ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-02-08 23:29:10 +0530
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3iPWCeu3qtXs7sbRIaOONLh+DKgMB43POlPl43SoMEhPuBF2U9B6e+VYQkbK+XzpK4iLo68p2bzo25lV+8JeSQ==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (2.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (20.6ms)[0m  [1m[33mUPDATE "admin_users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "admin_users"."id" = $7[0m  [["current_sign_in_at", "2018-02-08 17:59:11.212507"], ["last_sign_in_at", "2018-02-08 17:59:11.212507"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2018-02-08 17:59:11.214848"], ["id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 357ms (ActiveRecord: 30.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-02-08 23:29:11 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (2.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/page/index.html.arb (236.6ms)
+Completed 200 OK in 279ms (Views: 258.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2018-02-08 23:29:13 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb (339.2ms)
+Completed 200 OK in 413ms (Views: 366.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2018-02-08 23:34:01 +0530
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (1.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAdminUser Load (4.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb (814.3ms)
+Completed 200 OK in 906ms (Views: 818.1ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2018-02-08 23:34:06 +0530
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb (458.5ms)
+Completed 200 OK in 481ms (Views: 464.2ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/admin/users/25" for 127.0.0.1 at 2018-02-08 23:34:10 +0530
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = 25 AND "active_admin_comments"."namespace" = $2[0m  [["resource_type", "User"], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = 25 AND "active_admin_comments"."namespace" = $2 LIMIT $3 OFFSET $4[0m  [["resource_type", "User"], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/show.html.arb (493.1ms)
+Completed 200 OK in 562ms (Views: 507.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/admin/users/25/edit" for 127.0.0.1 at 2018-02-08 23:34:16 +0530
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/edit.html.arb (212.6ms)
+Completed 200 OK in 252ms (Views: 245.4ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/admin/users/25" for 127.0.0.1 at 2018-02-08 23:34:25 +0530
+Processing by Admin::UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NdSO7WchSGeGS8022Tga4I8OdmS5g/7X4oNSeWvGkFFW1AGyeUYrjKmTPaa0r8xAIxnJuylsL+XZJjAaA9NfFA==", "user"=>{"email"=>"yogesh.waghmare@consagous.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update User", "id"=>"25"}
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "$2a$10$1tuMW8f2matTAbd/1IpeHu7eghBmzrQSKBAwHkju7.eSmmUauk5P."], ["updated_at", "2018-02-08 18:04:25.532250"], ["id", 25]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/users/25
+Completed 302 Found in 195ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/admin/users/25" for 127.0.0.1 at 2018-02-08 23:34:25 +0530
+Processing by Admin::UsersController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = 25 AND "active_admin_comments"."namespace" = $2[0m  [["resource_type", "User"], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = 25 AND "active_admin_comments"."namespace" = $2 LIMIT $3 OFFSET $4[0m  [["resource_type", "User"], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/show.html.arb (273.3ms)
+Completed 200 OK in 295ms (Views: 287.9ms | ActiveRecord: 3.1ms)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (180.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api-quneat_development"[0m
+  [1m[35m (240.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api-quneat_test"[0m
+  [1m[35m (130.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (60.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180208130153)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180208130153)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (343.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "provider" character varying DEFAULT 'email' NOT NULL, "uid" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "name" character varying, "nickname" character varying, "profile_photo" character varying, "cover_photo" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (28.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (30.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_uid_and_provider" ON "users"  ("uid", "provider")[0m
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_confirmation_token" ON "users"  ("confirmation_token")[0m
+  [1m[35m (2.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180208130153)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (539.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "provider" character varying DEFAULT 'email' NOT NULL, "uid" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "name" character varying, "nickname" character varying, "profile_photo" character varying, "cover_photo" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_uid_and_provider" ON "users"  ("uid", "provider")[0m
+  [1m[35m (27.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_confirmation_token" ON "users"  ("confirmation_token")[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208130153"]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdminUsers (20180208175714)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (74.2ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (36.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (38.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208175714"]]
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20180208175720)
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (59.7ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (32.6ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (27.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208175720"]]
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-02-08 18:18:19.304850"], ["updated_at", "2018-02-08 18:18:19.304850"]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$11$5e2OPlpIlmIxtFcbToE0M.v7pVhW2WjAP8AWL1rVaAwDun0t10lIG"], ["created_at", "2018-02-08 18:18:35.187765"], ["updated_at", "2018-02-08 18:18:35.187765"]]
+  [1m[35m (34.6ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/auth" for 127.0.0.1 at 2018-02-08 23:50:16 +0530
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/auth"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+request_store (1.4.0) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 23:50:48 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"yogesh.waghmare@consagous.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 401 Unauthorized in 261ms (ActiveRecord: 8.5ms)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0xb594b410>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:4:in `create'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (124.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api-quneat_development"[0m
+  [1m[35m (224.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api-quneat_test"[0m
+  [1m[35m (84.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (69.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180208130153)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (73.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "provider" character varying DEFAULT 'email' NOT NULL, "uid" character varying DEFAULT '' NOT NULL, "password_digest" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "name" character varying, "nickname" character varying, "profile_photo" character varying, "cover_photo" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (27.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_uid_and_provider" ON "users"  ("uid", "provider")[0m
+  [1m[35m (28.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (28.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_confirmation_token" ON "users"  ("confirmation_token")[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208130153"]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdminUsers (20180208175714)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (72.8ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (29.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208175714"]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20180208175720)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (55.2ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208175720"]]
+  [1m[35m (14.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-02-08 18:23:06.214940"], ["updated_at", "2018-02-08 18:23:06.214940"]]
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$11$SPVqmVAMvZkIyroLN3UpuuUurZjHjuDg4jntGZEXE2Uy1MRuNr2fq"], ["created_at", "2018-02-08 18:23:18.437111"], ["updated_at", "2018-02-08 18:23:18.437111"]]
+  [1m[35m (29.6ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/signup" for 127.0.0.1 at 2018-02-08 23:53:27 +0530
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"ash", "email"=>"yogesh.waghmare@consagous.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$10$aUEM3nKpQZIoOiGaNxw6duaClGhd4EaSCmjatS6wANEz/Wq/cYf8."], ["name", "ash"], ["email", "yogesh.waghmare@consagous.com"], ["created_at", "2018-02-08 18:23:28.273542"], ["updated_at", "2018-02-08 18:23:28.273542"]]
+  [1m[35m (68.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yogesh.waghmare@consagous.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yogesh.waghmare@consagous.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (2.1ms)
+  Rendering user_mailer/welcome_email.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.text.erb within layouts/mailer (0.8ms)
+UserMailer#welcome_email: processed outbound mail in 425.5ms
+Sent mail to yogesh.waghmare@consagous.com (2174.0ms)
+Date: Thu, 08 Feb 2018 23:53:29 +0530
+From: ywaghmare5203@gmail.com
+To: yogesh.waghmare@consagous.com
+Message-ID: <5a7c95a181ee6_2b6c5d8d10a9059@yogesh-HP-ProBook-4445s.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7c95a17b0e1_2b6c5d8d10a89f2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7c95a17b0e1_2b6c5d8d10a89f2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to example.com, ash
+===============================================
+ 
+You have successfully signed up to example.com,
+your username is: ash.
+ 
+To login to the site, just follow this link: http://example.com/login.
+ 
+Thanks for joining and have a great day!
+
+----==_mimepart_5a7c95a17b0e1_2b6c5d8d10a89f2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to example.com, ash</h1>
+    <p>
+      You have successfully signed up to example.com,
+      your username is: ash.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: http://example.com/login.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5a7c95a17b0e1_2b6c5d8d10a89f2--
+
+Completed 201 Created in 3620ms (Views: 0.6ms | ActiveRecord: 80.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-08 23:53:46 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (6.4ms)
+Completed 200 OK in 37ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-02-08 23:53:52 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (1.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 46ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-02-08 23:53:52 +0530
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/shared/_links.erb (2.5ms)
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (56.2ms)
+Completed 200 OK in 829ms (Views: 814.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-02-08 23:54:28 +0530
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O1X8j91vSpCvgP4Kujj8i+iYJJtAKLKab6VLCJ1JIOhYVXPQwwgpe4BYDprXryorRI+bRNDHY6hUAClr9VzvrQ==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (1.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "admin_users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "admin_users"."id" = $7[0m  [["current_sign_in_at", "2018-02-08 18:24:29.113862"], ["last_sign_in_at", "2018-02-08 18:24:29.113862"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2018-02-08 18:24:29.115899"], ["id", 1]]
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 384ms (ActiveRecord: 34.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-02-08 23:54:29 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/page/index.html.arb (177.5ms)
+Completed 200 OK in 202ms (Views: 193.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2018-02-08 23:54:33 +0530
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb (280.5ms)
+Completed 200 OK in 573ms (Views: 283.3ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at 2018-02-08 23:54:35 +0530
+Processing by Admin::AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "admin_users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" ORDER BY "admin_users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb (640.5ms)
+Completed 200 OK in 663ms (Views: 654.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2018-02-08 23:54:41 +0530
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (1.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb (238.7ms)
+Completed 200 OK in 255ms (Views: 241.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/admin/users/1/edit" for 127.0.0.1 at 2018-02-08 23:54:46 +0530
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (1.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/edit.html.arb (221.8ms)
+Completed 200 OK in 244ms (Views: 234.1ms | ActiveRecord: 1.7ms)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (226.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api-quneat_development"[0m
+  [1m[35m (223.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api-quneat_test"[0m
+  [1m[35m (81.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (69.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180208130153)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (63.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "provider" character varying DEFAULT 'email' NOT NULL, "uid" character varying DEFAULT '' NOT NULL, "password_digest" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "status" boolean, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "name" character varying, "nickname" character varying, "profile_photo" character varying, "cover_photo" character varying, "email" character varying, "username" character varying, "mobile" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (30.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_uid_and_provider" ON "users"  ("uid", "provider")[0m
+  [1m[35m (55.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (94.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_confirmation_token" ON "users"  ("confirmation_token")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208130153"]]
+  [1m[35m (25.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdminUsers (20180208175714)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (87.9ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (60.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (37.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208175714"]]
+  [1m[35m (19.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20180208175720)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (58.7ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (28.8ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (28.6ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208175720"]]
+  [1m[35m (10.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-02-08 18:33:21.305931"], ["updated_at", "2018-02-08 18:33:21.305931"]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin/" for 127.0.0.1 at 2018-02-09 00:10:01 +0530
+  
+NoMethodError (undefined method `has_attached_file' for AdminUser (call 'AdminUser.connection' to establish a connection):Class):
+  
+app/models/admin_user.rb:7:in `<class:AdminUser>'
+app/models/admin_user.rb:1:in `<top (required)>'
+config/routes.rb:3:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/admin/" for 127.0.0.1 at 2018-02-09 00:18:17 +0530
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (24.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 98ms (ActiveRecord: 33.9ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2018-02-09 00:18:18 +0530
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/shared/_links.erb (4.5ms)
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (105.7ms)
+Completed 200 OK in 1404ms (Views: 1359.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-02-09 00:18:40 +0530
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YnrXwjyPClynmJPvelCWQOVFs/haqphpfC59fSiZpc1mJHQIfxBJJaDgV2fDHuPjEvqP2qsDtvS1U1SvTw0C2g==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (1.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 25ms (ActiveRecord: 1.7ms)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YnrXwjyPClynmJPvelCWQOVFs/haqphpfC59fSiZpc1mJHQIfxBJJaDgV2fDHuPjEvqP2qsDtvS1U1SvTw0C2g==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/shared/_links.erb (1.8ms)
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (35.5ms)
+Completed 200 OK in 502ms (Views: 217.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (17.3ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$11$H6PNeR9mrb8vfzwFBDbhLu7ftpIIhMR1WqXJOG2A2iJSE5M1bh7ZO"], ["created_at", "2018-02-08 18:49:09.697169"], ["updated_at", "2018-02-08 18:49:09.697169"]]
+  [1m[35m (17.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/admin/login" for 127.0.0.1 at 2018-02-09 00:19:23 +0530
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/shared/_links.erb (4.2ms)
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (54.0ms)
+Completed 200 OK in 881ms (Views: 823.1ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-02-09 00:19:33 +0530
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8dBq13P3ziL9uVzLuQR7h/xDikjcl73b5zgha17lSFP1jskdMGiNW/rBmEMASg4kC/y2ai0+k0YuRQi5OXHvRA==", "admin_user"=>{"email"=>"admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8dBq13P3ziL9uVzLuQR7h/xDikjcl73b5zgha17lSFP1jskdMGiNW/rBmEMASg4kC/y2ai0+k0YuRQi5OXHvRA==", "admin_user"=>{"email"=>"admin", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/shared/_links.erb (1.9ms)
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (47.0ms)
+Completed 200 OK in 238ms (Views: 235.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2018-02-09 00:19:53 +0530
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zPXFgC9StKlq5rNJOhqq0E6vO0V6xcqLDQJU5R3wvDTIq2ZKbM330G2ed8GDVN9zuRAHZ4ts5BbEf303emQbIw==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (2.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "admin_users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "admin_users"."id" = $7[0m  [["current_sign_in_at", "2018-02-08 18:49:53.674409"], ["last_sign_in_at", "2018-02-08 18:49:53.674409"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2018-02-08 18:49:53.676933"], ["id", 1]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 399ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2018-02-09 00:19:53 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/page/index.html.arb
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/page/index.html.arb (218.5ms)
+Completed 200 OK in 249ms (Views: 232.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2018-02-09 00:19:56 +0530
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (17.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/index.html.arb (303.6ms)
+Completed 200 OK in 379ms (Views: 304.8ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/admin/users/new" for 127.0.0.1 at 2018-02-09 00:19:59 +0530
+Processing by Admin::UsersController#new as HTML
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/new.html.arb (256.0ms)
+Completed 401 Unauthorized in 338ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for #<User:0x0c65b010>):
+    1: insert_tag renderer_for(:new)
+  
+app/admin/users.rb:27:in `block (3 levels) in <top (required)>'
+app/admin/users.rb:22:in `block (2 levels) in <top (required)>'
+Started GET "/admin/users/new" for 127.0.0.1 at 2018-02-09 00:20:35 +0530
+Processing by Admin::UsersController#new as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/new.html.arb (227.7ms)
+Completed 401 Unauthorized in 362ms (ActiveRecord: 13.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for nil:NilClass):
+    1: insert_tag renderer_for(:new)
+  
+app/admin/users.rb:27:in `block (3 levels) in <top (required)>'
+app/admin/users.rb:22:in `block (2 levels) in <top (required)>'
+Started GET "/admin/users/new" for 127.0.0.1 at 2018-02-09 00:22:45 +0530
+Processing by Admin::UsersController#new as HTML
+  [1m[36mAdminUser Load (1.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/new.html.arb
+  Rendered /home/yogesh/.rvm/gems/ruby-2.5.0/gems/activeadmin-1.2.1/app/views/active_admin/resource/new.html.arb (257.6ms)
+Completed 401 Unauthorized in 395ms (ActiveRecord: 12.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `url' for nil:NilClass):
+    1: insert_tag renderer_for(:new)
+  
+app/admin/users.rb:27:in `block (3 levels) in <top (required)>'
+app/admin/users.rb:22:in `block (2 levels) in <top (required)>'
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (126.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api-quneat_development"[0m
+  [1m[35m (225.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "api-quneat_test"[0m
+  [1m[35m (123.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (57.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180208130153)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (53.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "provider" character varying DEFAULT 'email' NOT NULL, "uid" character varying DEFAULT '' NOT NULL, "password_digest" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "status" boolean, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "name" character varying, "nickname" character varying, "email" character varying, "username" character varying, "mobile" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (21.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_uid_and_provider" ON "users"  ("uid", "provider")[0m
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35m (23.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_confirmation_token" ON "users"  ("confirmation_token")[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208130153"]]
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdminUsers (20180208175714)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (50.3ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  [1m[35m (28.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208175714"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20180208175720)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (64.6ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (27.8ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (53.7ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180208175720"]]
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAttachmentProfilePhot0ToUsers (20180208185526)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentProfilePhot0ToUsers (20180208185526)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentProfilePhot0ToUsers (20180208185526)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2323488426602533995)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentProfilePhotoToUsers (20180208190155)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2323488426602533995)[0m
