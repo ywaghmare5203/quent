@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
- permit_params :email, :password, :password_confirmation
+ permit_params :email, :password, :password_confirmation, :profile_photo, :cover_photo, :status
 
   index do
     selectable_column
@@ -20,15 +20,17 @@ ActiveAdmin.register User do
 
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs do
+      f.input :username
       f.input :email
+      f.input :mobile
       f.input :password
       f.input :password_confirmation
-      #t.input :profile_photo
-      f.input :profile_photo, :as => :file, :hint => f.template.image_tag(f.object.profile_photo.url(:medium))
-      f.input :cover_photo, :as => :file, :hint => f.template.image_tag(f.object.cover_photo.url(:medium))
+      f.inputs "Upload" do
+        f.input :profile_photo, required: true, as: :file
+        f.input :cover_photo, required: true, as: :file
+      end
+      f.input :status
     end
     f.actions
   end
-
-
 end
