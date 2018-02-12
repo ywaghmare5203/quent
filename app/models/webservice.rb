@@ -1,0 +1,2 @@
+class Webservice < ApplicationRecord
+end
