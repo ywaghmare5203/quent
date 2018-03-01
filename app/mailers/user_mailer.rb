@@ -5,4 +5,11 @@ class UserMailer < ApplicationMailer
     @url  = url
     mail(:to => user.email, :subject => "Welcome to My Awesome Site")
   end
+
+
+  def password_reset(user, url)
+  	@user = user
+    @url  = url
+    mail(:to => user.email, :subject => "Welcome to My Awesome Site")
+  end
 end

@@ -3,24 +3,37 @@ class User < ApplicationRecord
   # Validations
   validates_presence_of :name, :email, :password_digest
   validates_uniqueness_of :username, :email
-  has_attached_file :profile_photo
-  has_attached_file :cover_photo
+  has_attached_file :profile_photo, { url: "/system/User/:id/profile_photo/#{Digest::SHA256.base64digest("yogesh")[0..20]}/profile_photo.:extension"}
+  has_attached_file :cover_photo , { url: "/system/User/:id/cover_photo/#{Digest::SHA256.base64digest("yogesh")[0..20]}/cover_photo.:extension"}
   before_save :downcase_email
-  before_create :generate_confirmation_instructions
+  #before_create :generate_confirmation_instructions
  # Validate content type
-  #validates_attachment_content_type :profile_photo, content_type: /\Aimage/
-  #validates_attachment_content_type :cover_photo, content_type: /\Aimage/
+  validates_attachment_content_type :profile_photo, content_type: /\Aimage/
+  validates_attachment_content_type :cover_photo, content_type: /\Aimage/
   # Validate filename
-  #validates_attachment_file_name :profile_photo, matches: [/png\z/, /jpe?g\z/]
-  #validates_attachment_file_name :cover_photo, matches: [/png\z/, /jpe?g\z/]
+  validates_attachment_file_name :profile_photo, matches: [/png\z/, /jpe?g\z/]
+  validates_attachment_file_name :cover_photo, matches: [/png\z/, /jpe?g\z/]
   # Explicitly do not validate
-  #do_not_validate_attachment_file_type :profile_photo
-  #do_not_validate_attachment_file_type :cover_photo
+  do_not_validate_attachment_file_type :profile_photo
+  do_not_validate_attachment_file_type :cover_photo
 
 
   def downcase_email
     self.email = self.email.delete(' ').downcase
   end
+
+  def self.profile_photo_url(profile_photo)
+     profile_photo.url.dup.prepend("https://quneat-dev.herokuapp.com")
+  end
+
+  def self.cover_photo_url(cover_photo)
+     cover_photo.url.dup.prepend("https://quneat-dev.herokuapp.com")
+  end
+
+  #def generate_confirmation_instructions
+  #  self.confirmation_token = generate_token
+  #  self.confirmation_sent_at = Time.now.utc
+  #end
 
   def generate_confirmation_instructions
     self.confirmation_token = generate_token
@@ -59,22 +72,20 @@ class User < ApplicationRecord
     save
   end
 
-  def self.email_used?(email)
-    existing_user = find_by("email = ?", email)
-
-    if existing_user.present?
+  def self.email_used?(email, id)
+    existing_user = User.where(email: email, id: id )
+    if !existing_user.present?
       return true
     else
-      waiting_for_confirmation = find_by("unconfirmed_email = ?", email)
-      return waiting_for_confirmation.present? && waiting_for_confirmation.confirmation_token_valid?
+      return false
     end
   end
 
-  def update_new_email!
-    self.email = self.unconfirmed_email
-    self.unconfirmed_email = nil
-    self.mark_as_confirmed!
-  end
+#  def update_new_email!
+#    self.email = self.unconfirmed_email
+#    self.unconfirmed_email = nil
+#    self.mark_as_confirmed!
+#  end
 
   private
 

@@ -20,7 +20,7 @@ class Message
   end
 
   def self.account_created
-    'Account created successfully, please confirm user email address'
+    'Account created successfully'
   end
 
   def self.account_not_created
@@ -29,5 +29,9 @@ class Message
 
   def self.expired_token
     'Sorry, your token has expired. Please login to continue.'
+  end
+
+  def self.user_page_not_found
+    "Sorry, Your requested page not found"
   end
 end

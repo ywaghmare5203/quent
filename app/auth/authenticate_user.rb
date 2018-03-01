@@ -15,7 +15,6 @@ class AuthenticateUser
 
   # verify user credentials
   def user
-    puts "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSdddddddddddddddddSHHHHHHHHHHHHHHHHHHHHHHHHHHHHHRRRRRRRRRRRRRRRRRRR"
     user = User.find_by(email: email)
       if user && user.authenticate(password)
         return user
